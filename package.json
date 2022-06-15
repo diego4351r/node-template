@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
+    "build": "tsc",
     "prepare": "husky install",
     "clean": "rimraf dist",
     "preprod": "npm run clean",
     "prod": "NODE_ENV=production webpack --config webpack.config.js",
-    "postbuild": "npm run start",
     "dev": "NODE_ENV=development nodemon",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix verbose",
