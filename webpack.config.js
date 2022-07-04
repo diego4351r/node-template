@@ -1,4 +1,5 @@
 const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 module.exports = {
   entry: './src/app.ts',
   mode: 'production',
@@ -8,10 +9,11 @@ module.exports = {
     filename: 'app.js',
   },
   resolve: {
-    alias: {
-      '~': '/src',
-    },
-
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: './tsconfig.json'
+      })
+    ],
     extensions: ['.ts', '.js'],
   },
   module: {
